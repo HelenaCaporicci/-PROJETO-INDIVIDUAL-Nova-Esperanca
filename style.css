@@ -1,0 +1,100 @@
+body{
+  height: 100%;
+  background-color: #f5efe1;
+  margin: 0;
+}
+
+.topo{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  gap: 10px;
+  
+
+}
+
+.livro{
+  height: 35px;
+  width: auto;
+  align-items: end;
+
+}
+
+.title_atual{
+    padding: 8px 15px;
+    border-radius: 25px;
+    background-color: #7c4e2c;
+    color: #f5efe1;
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: right;
+    color: #2f1d11;
+    align-items: center;
+    justify-content: center;
+}
+
+.faixa{
+  height: 0.8cm;
+  background-color: #2f1d11;
+  width: 100%;
+}
+
+.home{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+.home02{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.titulo{
+  font-size: 55px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  justify-content: right;
+  color: #2f1d11;
+  align-items: start;
+  justify-content: right;
+  text-align: center;
+  margin: 2%;
+}
+
+.capa{
+  align-items: center;
+  justify-content: left;
+  padding: 20px;
+  width: 25vw;
+  margin: 2%;
+}
+
+.foto_vó{
+  align-items: center;
+  justify-content: left;
+  padding: 20px;
+  width: 25vw;
+  margin: 2%;
+  border-radius: 20px;
+  background-color: #2f1d11;
+}
+
+.sobre_livro{
+  padding: 50px;
+  width: 50vw;
+  margin: 2%;
+    border-radius: 17px;
+    background-color: #7c4e2c;
+    color: #f5efe1;
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    justify-content: right;
+}

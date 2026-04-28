@@ -1,0 +1,92 @@
+body{
+  min-height: 100vh;
+  background-color: #7c4d2cce;
+  margin: 0;
+}
+
+.topo{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-evenly;
+  gap: 10px;
+
+}
+
+.livro{
+  height: 35px;
+  width: auto;
+
+}
+
+.title_atual{
+    padding: 8px 10px;
+    border-radius: 25px;
+    background-color: #f5efe1;
+    color: #2f1d11;
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: right;
+    color: #f5efe1;
+    align-items: center;
+    display: flex;
+}
+
+.faixa{
+  height: 0.8cm;
+  background-color: #f5efe1;
+  width: 100%;
+}
+
+.card-cadastro{
+
+  width: 320px;              
+  background-color: #f5efe1;
+  padding: 25px;            
+  border-radius: 30px;  
+  border: solid 4px #2f1d11;
+  margin: 40px auto; 
+
+}
+
+.textinho{
+    color: #2f1d11;
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    justify-content: left;
+}
+
+.input{
+    background-color: #f5efe1;
+    width: 90%;
+    height: 30px;
+    margin: 2%;
+    border-radius: 20px;
+    border: solid 2px #2f1d11;
+    text-align: center;
+}
+
+.botão{
+    display: flex; 
+    background-color: #2f1d11;
+    color: #f5efe1;
+    padding: 7px;
+    border-radius: 13px;
+    font-size: 13px;
+    margin: 30px auto;
+}
+
+.entrar{
+    color: #7c4d2cce;
+    font-size: 12px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+     margin-top: 5px;
+}

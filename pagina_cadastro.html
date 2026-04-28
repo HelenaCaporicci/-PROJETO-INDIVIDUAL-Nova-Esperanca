@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style-cadastro/login.css">
+</head>
+
+<body>
+    <br>
+    <div class="topo">
+        <a href="pagina_inicial.html">
+            <img class="livro" src="livro.png">
+        </a>
+        <a href="pagina_inicial.html" class="title">
+            Home
+        </a>
+        <a href="pagina_autores.html" class="title">
+            Autor
+        </a>
+        <a href="pagina_obras.html" class="title">
+            Obras
+        </a>
+        <a href="pagina_cadastro.html" class="title_atual">
+            Cadastro
+        </a>
+        <a href="pagina_login.html" class="title">
+            Login
+        </a>
+    </div>
+<br>
+
+<div class="faixa"></div>
+
+    <div class="card-cadastro">
+        <p class="textinho">
+            Nome <br>
+            <input class="input" id="ipt_nome">
+        </p>
+
+        <p class="textinho">
+            E-mail <br>
+            <input class="input" id="ipt_email">
+        <div id="erro"></div>
+        </p>
+
+        <p class="textinho">
+            Senha <br>
+            <input class="input" id="ipt_senha" type="password">
+        <div id="erro_senha"></div>
+        </p>
+
+        <p class="textinho">
+            Já conhecia a história de Nova Esperança? <br>
+            <select class="input" name="select" id="select_conhece">
+                <option value="Selecione">Selecione...</option>
+                <option value="Sim">Sim</option>
+                <option value="Conhecia um pouco">Conhecia um pouco</option>
+                <option value="Nunca tinha ouvido falar">Nunca tinha ouvido falar</option>
+            </select>
+        </p>
+
+        <button class="botão" onclick="validar_cadastro()">Cadastrar</button>
+
+        <p class="entrar" style="color: #2f1d11;"> Já tem uma conta? <br><a class= "entrar" href="pagina_login.html"><b>Entrar</b></a></p>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+function validar_cadastro() {
+
+    let nome = ipt_nome.value;
+    let email = ipt_email.value;
+    let senha = ipt_senha.value;
+
+    let caracter = ["!", "@", "#", "$", "%", "^", "&", "*"];
+    let temCaracter = false;
+    let temCaracter_email = false;
+
+    let valido = true;
+
+    erro.innerHTML = "";
+    erro_senha.innerHTML = "";
+
+    if (nome == "" || email == "" || senha == "") {
+        alert('Preencha todos os campos!');
+        valido = false;
+    }
+
+
+    for (let i = 0; i < email.length; i++) {
+        if (email[i] == "@" || email[i] == ".") {
+            temCaracter_email = true;
+            break;
+        }
+    }
+
+    if (!temCaracter_email) {
+        erro.innerHTML = "Email inválido!";
+        valido = false;
+    } else {
+        erro.innerHTML = "Email válido!";
+    }
+
+
+    if (senha.length < 6) {
+        erro_senha.innerHTML = "A senha deve ter pelo menos 6 caracteres";
+        valido = false;
+    }
+
+    
+    for (let i = 0; i < senha.length; i++) {
+        if (caracter.includes(senha[i])) {
+            temCaracter = true;
+            break;
+        }
+    }
+
+    if (!temCaracter) {
+        erro_senha.innerHTML = "A senha deve conter um caractere especial";
+        valido = false;
+    }
+
+   
+    if (valido) {
+        erro_senha.innerHTML = "Senha válida";
+        window.location.href = "pagina_dashboard.html";
+    }
+}
+</script>

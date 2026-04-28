@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style-cadastro/login.css">
+</head>
+
+<body>
+    <br>
+    <div class="topo">
+        <a href="pagina_inicial.html">
+            <img class="livro" src="livro.png">
+        </a>
+        <a href="pagina_inicial.html" class="title">
+            Home
+        </a>
+        <a href="pagina_autores.html" class="title">
+            Autor
+        </a>
+        <a href="pagina_obras.html" class="title">
+            Obras
+        </a>
+        <a href="pagina_cadastro.html" class="title">
+            Cadastro
+        </a>
+        <a href="pagina_login.html" class="title_atual">
+            Login
+        </a>
+    </div>
+    <br>
+
+<div class="faixa"></div>
+
+    <div class="card-cadastro">
+
+        <p class="textinho">
+            E-mail <br>
+            <input class="input" id="ipt_email"> <br>
+        <div id="erro"></div> 
+        </p>
+
+        <p class="textinho">
+            Senha <br>
+            <input class="input" id="ipt_senha" type="password"> <br>
+        <div id="erro_senha"></div> 
+        </p>
+
+        <button class="botão" onclick="validar_cadastro()">Entrar</button>
+
+        <p class="entrar" style="color: #2f1d11;"> Não tem uma conta? <br> <a class="entrar"
+                href="pagina_cadastro.html"><b>Cadastrar-se</b></a></p>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    function validar_cadastro() {
+
+
+        let email = ipt_email.value;
+        let senha = ipt_senha.value;
+        let temCaracter = false;
+        let caracter = ["!", "@", "#", "$", "%", "^", "&", "*"];
+        let temCaracter_email = false;
+        let caracter_email = ["@", "."];
+
+
+        if (email == "" || senha == "") {
+            alert('Por favor, preencha todos os campos!')
+        }
+
+            for (let i = 0; i < email.length; i++) {
+
+                if (caracter_email.includes(senha[i])) {
+                    temCaracter_email = true;
+                    break;
+                }
+            }
+
+            for (let i = 0; i < senha.length; i++) {
+                    if (caracter.includes(senha[i])) {
+                        temCaracter = true;
+                        break;
+                    }
+                }
+
+            if (!temCaracter_email) {
+                erro.innerText = "Email invalido!";
+            }
+            if (senha.length < 6) {
+                    erro_senha.innerText = "A senha deve ter pelo menos 6 caracteres";
+                }
+            if (!temCaracter) {
+                    erro_senha.innerText = "A senha deve conter um caractere especial";
+                }
+
+                else {
+                erro.innerText = "Email valido!";
+                erro_senha.innerText = "Senha válida";
+                }
+            }
+
+
+</script>
