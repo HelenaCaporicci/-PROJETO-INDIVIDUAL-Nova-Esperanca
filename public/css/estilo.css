@@ -1,0 +1,609 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: #f6efe3;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+
+.topo{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(47, 29, 17, 0.85);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.livro{
+  height: 55px;
+}
+
+.title_atual{
+  padding: 10px 18px;
+  border-radius: 30px;
+  background-color: #f5efe1;
+  color: #2f1d11;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.title{
+  color: #f5efe1;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.title:hover{
+  opacity: 0.7;
+}
+
+.login{
+  height: 24px;
+}
+
+.banner{
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    margin-top: -50px;
+}
+
+.quadro{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.homes{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 120px;
+
+  padding: 180px 100px 100px;
+}
+
+.home{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+.home02{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.titulo{
+  font-size: 55px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  justify-content: right;
+  color: #2f1d11;
+  align-items: start;
+  justify-content: right;
+  text-align: center;
+  margin: 2%;
+}
+
+.capa{
+  align-items: center;
+  justify-content: left;
+  padding: 20px;
+  width: 25vw;
+  margin: 2%;
+}
+
+.foto_vó{
+  align-items: center;
+  justify-content: left;
+  padding: 20px;
+  width: 25vw;
+  margin: 2%;
+  border-radius: 20px;
+  background-color: #2f1d11;
+}
+
+.sobre_livro{
+  padding: 50px;
+  width: 50vw;
+  margin: 2%;
+    border-radius: 17px;
+    background-color: #7c4e2c;
+    color: #f5efe1;
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    justify-content: right;
+}
+
+
+/* IMAGEM */
+
+.capa{
+  width: 380px;
+
+  border-radius: 20px;
+
+  box-shadow:
+  0px 25px 50px rgba(0,0,0,0.15);
+
+  transition: 0.4s;
+}
+
+.capa:hover{
+  transform:
+  translateY(-10px)
+  scale(1.02);
+}
+
+.foto_vó{
+  width: 360px;
+
+  border-radius: 24px;
+
+  box-shadow:
+  0px 20px 40px rgba(0,0,0,0.12);
+}
+
+
+/* TEXTO */
+
+.sobre_livro{
+  font-size: 18px;
+
+  line-height: 2;
+
+  color: #5c4636;
+
+  background-color: rgba(255,255,255,0.6);
+
+  padding: 40px;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+  0px 10px 30px rgba(0,0,0,0.06);
+}
+
+
+
+
+
+
+
+/*Obras*/
+
+/* MENU */
+
+.header-left{
+    position: fixed;
+
+    width: 240px;
+    height: 100vh;
+
+    background: linear-gradient(
+    to bottom,
+    #5c3418,
+    #8a5630
+    );
+
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-left h1{
+    color: white;
+
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 40px;
+}
+
+.hello h3{
+    color: #f1d7bc;
+
+    font-weight: normal;
+
+    margin-bottom: 40px;
+}
+
+
+/* BOTÕES */
+
+.btn-nav-white,
+.btn-logout{
+    width: 85%;
+
+    background-color: white;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-nav-white:hover,
+.btn-logout:hover{
+    transform: scale(1.05);
+
+    background-color: #f5e5d6;
+}
+
+.btn-nav-white a{
+    text-decoration: none;
+}
+
+.btn-nav-white h3,
+.btn-logout h3{
+    margin: 0;
+
+    color: #6d4122;
+}
+
+
+/* CARROSSEL */
+
+.container-carrossel{
+    margin-left: 270px;
+
+    padding-top: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.carrossel{
+    width: 82%;
+
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    padding: 20px;
+}
+
+.carrossel::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* CARDS */
+
+.card{
+    min-width: 240px;
+
+    height: 130px;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    color: #4a2b17;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+
+    background-color: #fff7ef;
+}
+
+
+/* BOTÕES SETA */
+
+.btn{
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    background-color: white;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
+/* TEXTO */
+
+.texto{
+    width: 62%;
+
+    margin:
+    50px auto 60px 340px;
+
+    background-color: white;
+
+    padding:
+    60px 70px;
+
+    border-radius: 25px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.08);
+
+    font-size: 18px;
+
+    line-height: 2.2;
+
+    color: #4b3526;
+
+    text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.texto p::first-letter{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 55px;
+
+    font-weight: bold;
+
+    color: #8a5630;
+}
+
+
+/* SELECT */
+
+.select{
+    width: 500px;
+
+    margin:
+    80px auto 100px 420px;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+    text-align: center;
+}
+
+.select h2{
+    margin-bottom: 25px;
+
+    color: #5c3418;
+}
+
+#select_obra{
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    border: 2px solid #d8c0aa;
+
+    font-size: 18px;
+
+    outline: none;
+}
+
+/* RODAPE */
+
+.rodape{
+  background-color: #2f1d11;
+
+  color: #f5efe1;
+
+  padding: 70px 50px 30px;
+}
+
+.rodape-container{
+  display: flex;
+
+  justify-content: space-around;
+
+  flex-wrap: wrap;
+
+  gap: 50px;
+}
+
+.rodape-coluna{
+  max-width: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.logo-rodape{
+  width: 55px;
+}
+
+.nome-site{
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+.rodape-coluna h4{
+  margin-bottom: 10px;
+}
+
+.rodape-coluna a{
+  color: #f5efe1;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.rodape-coluna a:hover{
+  color: #d8b38f;
+}
+
+.rodape-final{
+  text-align: center;
+
+  margin-top: 50px;
+
+  opacity: 0.7;
+}
+
+
+/* RESPONSIVO */
+
+@media(max-width: 1100px){
+
+  .homes{
+    flex-direction: column;
+
+    gap: 50px;
+
+    text-align: center;
+  }
+
+  .home02{
+    align-items: center;
+  }
+
+  .titulo{
+    font-size: 60px;
+  }
+
+  .sobre_livro{
+    text-align: center;
+  }
+}
+
+/* SIMULADOR */
+
+.simulador {
+  color: white;
+}
+
+.simulador .container {
+  flex-direction: column;
+  overflow: scroll; 
+  height: var(--tamanho-simulador);
+}
+
+/* ALERTA */
+
+#alerta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.mensagem-alarme {
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mensagem-alarme h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.mensagem-alarme .informacao {
+  width: 66%;
+}
+
+.alarme-sino {
+  width: 48px;
+  height: 48px;
+  animation-name: bell;
+  animation-duration: 4s;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
+  background-size: cover;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bell {
+  0%   {transform: rotate(25deg)}
+  25%  {transform: rotate(-25deg)}
+  50%  {transform: rotate(25deg)}
+  75%  {transform: rotate(-25deg)}
+  100% {transform: rotate(25deg)}
+}

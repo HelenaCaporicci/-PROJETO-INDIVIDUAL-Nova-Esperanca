@@ -1,0 +1,197 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  background-color: #f6efe3;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+
+.topo{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(47, 29, 17, 0.85);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.livro{
+  height: 55px;
+}
+
+.title_atual{
+  padding: 10px 18px;
+  border-radius: 30px;
+  background-color: #f5efe1;
+  color: #2f1d11;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.title{
+  color: #f5efe1;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.title:hover{
+  opacity: 0.7;
+}
+
+.login{
+  height: 24px;
+}
+
+.titulo{
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2f1d11;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.titulo span{
+    background: linear-gradient(135deg, #7c4d2c, #a67c52);
+    background: linear-gradient(135deg, #7c4d2c, #a67c52);
+    -webkit-text-fill-color: transparent;
+}
+
+.card-cadastro{
+
+  width: 320px;              
+  padding: 30px;            
+  border-radius: 25px;  
+  margin: 140px auto 70px; 
+  background: rgba(245, 239, 225, 0.85);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(47, 29, 17, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25); 
+
+}
+
+.textinho{
+    color: #2f1d11;
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    justify-content: left;
+}
+
+.input{
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 12px;
+    border: none;
+    background-color: #ffffffcc;
+    display: block;
+    transition: 0.3s;
+}
+
+.input:focus{
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 8px #7c4d2c88;
+}
+
+.botao{
+    display: flex; 
+    background-color: #2f1d11;
+    color: #f5efe1;
+    padding: 7px;
+    border-radius: 13px;
+    font-size: 13px;
+    margin: 30px auto;
+}
+
+.entrar{
+    color: #7c4d2cce;
+    font-size: 12px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+     margin-top: 5px;
+}
+
+
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
+/* FORMULARIO */
+
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #7c4d2c 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+
+.btn {
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #7c4d2c;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+}
+
+.loading-div {
+  width: 50px;
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}

@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f5efe6;
+
+    overflow-x: hidden;
+
+    color: #2d1607;
+}
+
+.janela{
+    display: flex;
+}
+
+
+/* SIDEBAR */
+
+.header-left{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 220px;
+    height: 100vh;
+
+    background: linear-gradient(
+    180deg,
+    #5c3b1e,
+    #7c4e2c
+    );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 35px 20px;
+
+    box-shadow:
+    4px 0px 20px rgba(0,0,0,0.12);
+
+    z-index: 999;
+}
+
+.header-left h1{
+    color: white;
+
+    font-size: 28px;
+
+    line-height: 1.15;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.hello{
+    margin-top: -40px;
+}
+
+.hello h3{
+    color: #f2d7bf;
+
+    font-size: 21px;
+
+    font-weight: 400;
+}
+
+.hello span{
+    font-weight: bold;
+}
+
+
+/* BOTÕES MENU */
+
+.btn-nav-white{
+    width: 90%;
+
+    background: rgba(255,255,255,0.95);
+
+    border-radius: 18px;
+
+    padding: 16px;
+
+    margin-bottom: 18px;
+
+    text-align: center;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.08);
+}
+
+.btn-nav-white:hover{
+    transform: translateY(-4px);
+
+    background: white;
+}
+
+.btn-nav-white a{
+    text-decoration: none;
+
+    color: inherit;
+}
+
+.btn-nav-white h3{
+    color: #6d4122;
+
+    font-size: 22px;
+}
+
+
+/* LOGOUT */
+
+.btn-logout{
+    width: 90%;
+
+    background: #fff7ef;
+
+    border-radius: 20px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.08);
+}
+
+.btn-logout:hover{
+    transform: translateY(-4px);
+}
+
+.btn-logout h3{
+    color: #6d4122;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+}
+
+
+/* DASHBOARD */
+
+.dashboard{
+    margin-left: 220px;
+
+    width: calc(100% - 220px);
+
+    min-height: 100vh;
+
+    padding: 40px 50px;
+
+    margin-top: -120px;
+}
+
+
+/* TITULO */
+
+.titulo{
+    font-size: 68px;
+
+    text-align: center;
+
+    color: #2d1607;
+
+    margin-bottom: 50px;
+}
+
+
+/* KPIS */
+
+.kpis{
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 25px;
+
+    margin-bottom: 50px;
+}
+
+
+/* CARD KPI */
+
+.kpi{
+    background: rgba(255,255,255,0.85);
+
+    border-radius: 28px;
+
+    padding: 28px;
+
+    min-height: 170px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
+
+    transition: 0.3s;
+}
+
+.kpi:hover{
+    transform: translateY(-5px);
+}
+
+
+/* TEXTO KPI */
+
+.kpi h3{
+    font-size: 20px;
+
+    color: #7c6654;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* NUMERO KPI */
+
+.kpi span{
+    font-size: 58px;
+
+    font-weight: bold;
+
+    color: #2d1607;
+
+    line-height: 1;
+}
+
+
+/* TEXTO GRANDE */
+
+.textoGrande{
+    font-size: 34px;
+
+    font-weight: bold;
+
+    color: #2d1607;
+
+    line-height: 1.1;
+
+    word-break: break-word;
+}
+
+
+/* GRAFICOS */
+
+.graficos{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    margin-top: 30px;
+}
+
+
+/* CARD GRAFICO */
+
+.card_grafico{
+    background: rgba(255,255,255,0.85);
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    min-height: 430px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.card_grafico:hover{
+    transform: translateY(-4px);
+}
+
+.card_grafico h2{
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #6d4122;
+
+    font-size: 32px;
+}
+
+.grafico-container{
+    position: relative;
+
+    width: 100%;
+
+    height: 320px;
+}
+
+
+
+/* RESPONSIVO */
+
+@media(max-width: 1100px){
+
+    .graficos{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media(max-width: 900px){
+
+    .header-left{
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        gap: 20px;
+    }
+
+    .dashboard{
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+    .titulo{
+        font-size: 50px;
+    }
+
+    .graficos{
+        grid-template-columns: 1fr;
+    }
+
+    .kpis{
+        grid-template-columns: 1fr;
+    }
+}
