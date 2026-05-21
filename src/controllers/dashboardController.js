@@ -1,20 +1,81 @@
-var dashboardModel =
-require("../models/dashboardModel");
+var dashboardModel = require("../models/dashboardModel");
 
-function buscarDados(req, res){
+function buscarTotalUsuarios(req, res) {
 
-    dashboardModel.buscarDados()
-
+    dashboardModel.buscarTotalUsuarios()
     .then(function(resultado){
 
-        res.json(resultado[0]);
+        res.json(resultado);
 
-    })
-
-    .catch(function(erro){
+    }).catch(function(erro){
 
         console.log(erro);
+        res.status(500).json(erro);
 
+    });
+
+}
+
+function buscarObraMaisSelecionada(req, res) {
+
+    dashboardModel.buscarObraMaisSelecionada()
+    .then(function(resultado){
+
+        res.json(resultado);
+
+    }).catch(function(erro){
+
+        console.log(erro);
+        res.status(500).json(erro);
+
+    });
+
+}
+
+function buscarObraUsuario(req, res) {
+
+    var idUsuario = req.params.idUsuario;
+
+    dashboardModel.buscarObraUsuario(idUsuario)
+    .then(function(resultado){
+
+        res.json(resultado);
+
+    }).catch(function(erro){
+
+        console.log(erro);
+        res.status(500).json(erro);
+
+    });
+
+}
+
+function buscarConhecimento(req, res) {
+
+    dashboardModel.buscarConhecimento()
+    .then(function(resultado){
+
+        res.json(resultado);
+
+    }).catch(function(erro){
+
+        console.log(erro);
+        res.status(500).json(erro);
+
+    });
+
+}
+
+function buscarCurtidasObras(req, res) {
+
+    dashboardModel.buscarCurtidasObras()
+    .then(function(resultado){
+
+        res.json(resultado);
+
+    }).catch(function(erro){
+
+        console.log(erro);
         res.status(500).json(erro);
 
     });
@@ -22,5 +83,11 @@ function buscarDados(req, res){
 }
 
 module.exports = {
-    buscarDados
+
+    buscarTotalUsuarios,
+    buscarObraMaisSelecionada,
+    buscarObraUsuario,
+    buscarConhecimento,
+    buscarCurtidasObras
+
 }

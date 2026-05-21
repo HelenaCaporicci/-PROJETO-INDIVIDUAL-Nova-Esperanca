@@ -21,7 +21,6 @@ var obrasRouter = require("./src/routes/obras");
 var dashboardRouter = require("./src/routes/dashboard");
 
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));

@@ -1,69 +1,77 @@
 var database = require("../database/config");
 
-function buscarDados(){
+function buscarTotalUsuarios() {
 
     var instrucaoSql = `
-
-SELECT 
-(SELECT COUNT(*) FROM usuario) AS totalUsuarios,
-
-(SELECT COUNT(*) FROM obraFavorita) AS totalCurtidas,
-
-(
-SELECT titulo
-FROM obra
-JOIN obraFavorita
-ON obra.id = obraFavorita.fkObra
-GROUP BY titulo
-ORDER BY COUNT(*) DESC
-LIMIT 1
-) AS obraMaisCurtida,
-
-(
-SELECT ROUND(
-(COUNT(CASE WHEN conhece = 'Sim' THEN 1 END) * 100)
-/ COUNT(*)
-)
-FROM usuario
-) AS porcentagemConhece,
-
-(SELECT COUNT(*) FROM usuario WHERE conhece = 'Sim')
-AS conhece,
-
-(SELECT COUNT(*) FROM usuario WHERE conhece = 'Mais ou menos')
-AS conhecePouco,
-
-(SELECT COUNT(*) FROM usuario WHERE conhece = 'Não')
-AS naoConhece;
-
-`;
+        SELECT COUNT(id) AS totalUsuarios FROM usuario;
+    `;
 
     return database.executar(instrucaoSql);
-
 }
 
-function buscarObras(){
+function buscarObraMaisSelecionada() {
 
     var instrucaoSql = `
-
-SELECT
-obra.titulo,
-COUNT(obraFavorita.fkObra) AS curtidas
-
-FROM obraFavorita
-
-JOIN obra
-ON obra.id = obraFavorita.fkObra
-
-GROUP BY obra.titulo;
-
-`;
+        SELECT 
+        o.titulo,
+        COUNT(obf.fkObra) AS total
+        FROM obraFavorita obf
+        JOIN obra o ON o.id = obf.fkObra
+        GROUP BY o.titulo
+        ORDER BY total DESC
+        LIMIT 1;
+    `;
 
     return database.executar(instrucaoSql);
+}
 
+function buscarObraUsuario(idUsuario) {
+
+    var instrucaoSql = `
+        SELECT 
+        o.titulo
+        FROM obraFavorita obf
+        JOIN obra o ON o.id = obf.fkObra
+        WHERE obf.fkUsuario = ${idUsuario};
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+function buscarConhecimento() {
+
+    var instrucaoSql = `
+        SELECT 
+        conhece,
+        COUNT(id) AS total
+        FROM usuario
+        GROUP BY conhece;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+function buscarCurtidasObras() {
+
+    var instrucaoSql = `
+        SELECT 
+        o.titulo,
+        COUNT(obf.fkObra) AS totalCurtidas
+        FROM obra o
+        LEFT JOIN obraFavorita obf
+        ON obf.fkObra = o.id
+        GROUP BY o.id, o.titulo
+        ORDER BY totalCurtidas DESC;
+    `;
+
+    return database.executar(instrucaoSql);
 }
 
 module.exports = {
-    buscarDados,
-    buscarObras
+
+    buscarTotalUsuarios,
+    buscarObraMaisSelecionada,
+    buscarObraUsuario,
+    buscarConhecimento,
+    buscarCurtidasObras
 }
