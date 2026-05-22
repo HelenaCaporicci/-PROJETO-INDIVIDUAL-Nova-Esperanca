@@ -3,7 +3,7 @@ var database = require("../database/config");
 function salvarObra(fkUsuario, fkObra) {
 
     var instrucaoSql = `
-        INSERT INTO obraFavorita
+        INSERT INTO obrasFavoritas
         (fkUsuario, fkObra)
         VALUES
         (${fkUsuario}, ${fkObra});

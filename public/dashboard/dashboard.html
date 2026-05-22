@@ -18,43 +18,30 @@
 
 </head>
 
-<body>
+<body onload="validarSessao()">
 
     <div class="janela">
-
-        <!-- MENU -->
-
         <div class="header-left">
-
             <h1>De Capelinha a Nova Esperança</h1>
 
             <div class="hello">
-
-                <h3>
-                    Olá,
-                    <span id="b_usuario">usuário</span>!
-                </h3>
-
+                <h3>Olá, <span class= "nome" id="b_usuario">usuário</span>!</h3>
             </div>
 
             <div class="btn-nav-white">
-
                 <a href="./obras.html">
                     <h3>Obras</h3>
                 </a>
-
             </div>
 
-            <div class="btn-nav">
-
-                <h3>Dashboard</h3>
-
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Dashboard</h3>
+                </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
-
                 <h3>Voltar para o Site Institucional</h3>
-
             </div>
 
         </div>
@@ -116,7 +103,7 @@
 
                     </div>
 
-                </div>
+                </div><body onload="preencherNome()"></body>
 
 
                 <!-- BARRAS -->
@@ -147,349 +134,356 @@
 
 <script>
 
-window.onload = function () {
-
-    obterDadosGrafico();
-    obterDadosGraficoPizza();
-    obterKPIs();
-
-}
-
-/* ============================
-        KPIs
-============================ */
-
-function obterKPIs(){
-
-    obterTotalUsuarios();
-    obterObraMaisSelecionada();
-    obterObraUsuario();
-
-}
-
-function obterTotalUsuarios(){
-
-    fetch("/dashboard/totalUsuarios")
-
-    .then(function(resposta){
-
-        return resposta.json();
-
-    })
-
-    .then(function(dados){
-
-        kpiUsuarios.innerHTML = dados[0].totalUsuarios;
-
-    });
-
-}
-
-function obterObraMaisSelecionada(){
-
-    fetch("/dashboard/obraMaisSelecionada")
-
-    .then(function(resposta){
-
-        return resposta.json();
-
-    })
-
-    .then(function(dados){
-
-        kpiObra.innerHTML = dados[0].titulo;
-
-    });
-
-}
-
-function obterObraUsuario(){
-
-    var idUsuario = sessionStorage.ID_USUARIO;
-
-    fetch(`/dashboard/obraUsuario/${idUsuario}`)
-
-    .then(function(resposta){
-
-        return resposta.json();
-
-    })
-
-    .then(function(dados){
-
-        if(dados.length > 0){
-
-            kpiUsuario.innerHTML = dados[0].titulo;
-
-        } else {
-
-            kpiUsuario.innerHTML = "Nenhuma";
-
-        }
-
-    });
-
-}
-
-/* ============================
-    GRÁFICO DE BARRAS
-============================ */
-
-function obterDadosGrafico() {
-
-    fetch("/dashboard/curtidasObras")
-
-    .then(function (resposta) {
-
-        if (resposta.ok) {
-
-            resposta.json().then(function (resposta) {
-
-                console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                plotarGrafico(resposta);
-
-            });
-
-        } else {
-
-            console.error('Nenhum dado encontrado');
-
-        }
-
-    })
-
-    .catch(function (erro) {
-
-        console.log(erro);
-
-    });
-
-}
-
-function plotarGrafico(resposta) {
-
-    let labels = [];
-
-    let dados = {
-
-        labels: labels,
-
-        datasets: [{
-
-            label: 'Quantidade de Curtidas',
-
-            data: [],
-
-            borderWidth: 1
-
-        }]
-    };
-
-    for (let i = 0; i < resposta.length; i++) {
-
-        var registro = resposta[i];
-
-        labels.push(registro.titulo);
-
-        dados.datasets[0].data.push(registro.totalCurtidas);
+    window.onload = function () {
+
+        obterDadosGrafico();
+        obterDadosGraficoPizza();
+        obterKPIs();
 
     }
 
-    const config = {
+    /* ============================
+            KPIs
+    ============================ */
 
-        type: 'bar',
+    function obterKPIs() {
 
-        data: dados,
+        obterTotalUsuarios();
+        obterObraMaisSelecionada();
+        obterObraUsuario();
 
-        options: {
+    }
 
-            responsive: true,
+    function obterTotalUsuarios() {
 
-            scales: {
+        fetch("/dashboard/totalUsuarios")
 
-                y: {
+            .then(function (resposta) {
 
-                    beginAtZero: true
+                return resposta.json();
 
+            })
+
+            .then(function (dados) {
+
+                kpiUsuarios.innerHTML = dados[0].totalUsuarios;
+
+            });
+
+    }
+
+    function obterObraMaisSelecionada() {
+
+        fetch("/dashboard/obraMaisSelecionada")
+
+            .then(function (resposta) {
+
+                return resposta.json();
+
+            })
+
+            .then(function (dados) {
+
+                kpiObra.innerHTML = dados[0].titulo;
+
+            });
+
+    }
+
+    function obterObraUsuario() {
+
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch(`/dashboard/obraUsuario/${idUsuario}`)
+
+            .then(function (resposta) {
+
+                return resposta.json();
+
+            })
+
+            .then(function (dados) {
+
+                if (dados.length > 0) {
+
+                    kpiUsuario.innerHTML = dados[0].titulo;
+
+                } else {
+
+                    kpiUsuario.innerHTML = "Nenhuma";
+
+                }
+
+            });
+
+    }
+
+    /* ============================
+        GRÁFICO DE BARRAS
+    ============================ */
+
+    function obterDadosGrafico() {
+
+        fetch("/dashboard/curtidasObras")
+
+            .then(function (resposta) {
+
+                if (resposta.ok) {
+
+                    resposta.json().then(function (resposta) {
+
+                        console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                        plotarGrafico(resposta);
+
+                    });
+
+                } else {
+
+                    console.error('Nenhum dado encontrado');
+
+                }
+
+            })
+
+            .catch(function (erro) {
+
+                console.log(erro);
+
+            });
+
+    }
+
+    function plotarGrafico(resposta) {
+
+        let labels = [];
+
+        let dados = {
+
+            labels: labels,
+
+            datasets: [{
+
+                label: 'Quantidade de Curtidas',
+
+                data: [],
+
+                borderWidth: 1
+
+            }]
+        };
+
+        for (let i = 0; i < resposta.length; i++) {
+
+            var registro = resposta[i];
+
+            labels.push(registro.titulo);
+
+            dados.datasets[0].data.push(registro.totalCurtidas);
+
+        }
+
+        const config = {
+
+            type: 'bar',
+
+            data: dados,
+
+            options: {
+
+                responsive: true,
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true
+
+                    }
                 }
             }
-        }
-    };
+        };
 
-    let myChart = new Chart(
+        let myChart = new Chart(
 
-        document.getElementById(`graficoBarra`),
+            document.getElementById(`graficoBarra`),
 
-        config
+            config
 
-    );
+        );
 
-    setInterval(() => atualizarGrafico(myChart), 5000);
-
-}
-
-function atualizarGrafico(myChart) {
-
-    fetch("/dashboard/curtidasObras", { cache: 'no-store' })
-
-    .then(function (response) {
-
-        if (response.ok) {
-
-            response.json().then(function (novoRegistro) {
-
-                myChart.data.labels = [];
-                myChart.data.datasets[0].data = [];
-
-                for (let i = 0; i < novoRegistro.length; i++) {
-
-                    myChart.data.labels.push(novoRegistro[i].titulo);
-
-                    myChart.data.datasets[0].data.push(novoRegistro[i].totalCurtidas);
-
-                }
-
-                myChart.update();
-
-            });
-
-        }
-
-    })
-
-    .catch(function (error) {
-
-        console.error(error);
-
-    });
-
-}
-
-/* ============================
-    GRÁFICO PIZZA
-============================ */
-
-function obterDadosGraficoPizza() {
-
-    fetch("/dashboard/conhecimento")
-
-    .then(function (resposta) {
-
-        if (resposta.ok) {
-
-            resposta.json().then(function (resposta) {
-
-                console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                plotarGraficoPizza(resposta);
-
-            });
-
-        } else {
-
-            console.error('Nenhum dado encontrado');
-
-        }
-
-    })
-
-    .catch(function (erro) {
-
-        console.log(erro);
-
-    });
-
-}
-
-function plotarGraficoPizza(resposta) {
-
-    let labels = [];
-
-    let dados = {
-
-        labels: labels,
-
-        datasets: [{
-
-            label: 'Usuários',
-
-            data: []
-
-        }]
-    };
-
-    for (let i = 0; i < resposta.length; i++) {
-
-        var registro = resposta[i];
-
-        labels.push(registro.conhece);
-
-        dados.datasets[0].data.push(registro.total);
+        setInterval(() => atualizarGrafico(myChart), 5000);
 
     }
 
-    const config = {
+    function atualizarGrafico(myChart) {
 
-        type: 'pie',
+        fetch("/dashboard/curtidasObras", { cache: 'no-store' })
 
-        data: dados,
+            .then(function (response) {
 
-        options: {
+                if (response.ok) {
 
-            responsive: true
+                    response.json().then(function (novoRegistro) {
 
-        }
-    };
+                        myChart.data.labels = [];
+                        myChart.data.datasets[0].data = [];
 
-    let myChart = new Chart(
+                        for (let i = 0; i < novoRegistro.length; i++) {
 
-        document.getElementById(`graficoPizza`),
+                            myChart.data.labels.push(novoRegistro[i].titulo);
 
-        config
+                            myChart.data.datasets[0].data.push(novoRegistro[i].totalCurtidas);
 
-    );
+                        }
 
-    setInterval(() => atualizarGraficoPizza(myChart), 5000);
+                        myChart.update();
 
-}
-
-function atualizarGraficoPizza(myChart) {
-
-    fetch("/dashboard/conhecimento", { cache: 'no-store' })
-
-    .then(function (response) {
-
-        if (response.ok) {
-
-            response.json().then(function (novoRegistro) {
-
-                myChart.data.labels = [];
-
-                myChart.data.datasets[0].data = [];
-
-                for (let i = 0; i < novoRegistro.length; i++) {
-
-                    myChart.data.labels.push(novoRegistro[i].conhece);
-
-                    myChart.data.datasets[0].data.push(novoRegistro[i].total);
+                    });
 
                 }
 
-                myChart.update();
+            })
+
+            .catch(function (error) {
+
+                console.error(error);
 
             });
 
+    }
+
+    /* ============================
+        GRÁFICO PIZZA
+    ============================ */
+
+    function obterDadosGraficoPizza() {
+
+        fetch("/dashboard/conhecimento")
+
+            .then(function (resposta) {
+
+                if (resposta.ok) {
+
+                    resposta.json().then(function (resposta) {
+
+                        console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                        plotarGraficoPizza(resposta);
+
+                    });
+
+                } else {
+
+                    console.error('Nenhum dado encontrado');
+
+                }
+
+            })
+
+            .catch(function (erro) {
+
+                console.log(erro);
+
+            });
+
+    }
+
+    function plotarGraficoPizza(resposta) {
+
+        let labels = [];
+
+        let dados = {
+
+            labels: labels,
+
+            datasets: [{
+
+                label: 'Usuários',
+
+                data: []
+
+            }]
+        };
+
+        for (let i = 0; i < resposta.length; i++) {
+
+            var registro = resposta[i];
+
+            labels.push(registro.conhece);
+
+            dados.datasets[0].data.push(registro.total);
+
         }
 
-    })
+        const config = {
 
-    .catch(function (error) {
+            type: 'pie',
 
-        console.error(error);
+            data: dados,
 
-    });
+            options: {
 
-}
+                responsive: true
+
+            }
+        };
+
+        let myChart = new Chart(
+
+            document.getElementById(`graficoPizza`),
+
+            config
+
+        );
+
+        setInterval(() => atualizarGraficoPizza(myChart), 5000);
+
+    }
+
+    function atualizarGraficoPizza(myChart) {
+
+        fetch("/dashboard/conhecimento", { cache: 'no-store' })
+
+            .then(function (response) {
+
+                if (response.ok) {
+
+                    response.json().then(function (novoRegistro) {
+
+                        myChart.data.labels = [];
+
+                        myChart.data.datasets[0].data = [];
+
+                        for (let i = 0; i < novoRegistro.length; i++) {
+
+                            myChart.data.labels.push(novoRegistro[i].conhece);
+
+                            myChart.data.datasets[0].data.push(novoRegistro[i].total);
+
+                        }
+
+                        myChart.update();
+
+                    });
+
+                }
+
+            })
+
+            .catch(function (error) {
+
+                console.error(error);
+
+            });
+
+    }
+
+    function preencherNome() {
+        var email = sessionStorage.EMAIL_USUARIO;
+        var nome = sessionStorage.NOME_USUARIO;
+
+        document.getElementById("b_usuario").innerHTML = nome;
+    }
 
 </script>

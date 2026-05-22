@@ -15,7 +15,7 @@ function buscarObraMaisSelecionada() {
         SELECT 
         o.titulo,
         COUNT(obf.fkObra) AS total
-        FROM obraFavorita obf
+        FROM obrasFavoritas  obf
         JOIN obra o ON o.id = obf.fkObra
         GROUP BY o.titulo
         ORDER BY total DESC
@@ -30,7 +30,7 @@ function buscarObraUsuario(idUsuario) {
     var instrucaoSql = `
         SELECT 
         o.titulo
-        FROM obraFavorita obf
+        FROM obrasFavoritas obf
         JOIN obra o ON o.id = obf.fkObra
         WHERE obf.fkUsuario = ${idUsuario};
     `;
@@ -58,7 +58,7 @@ function buscarCurtidasObras() {
         o.titulo,
         COUNT(obf.fkObra) AS totalCurtidas
         FROM obra o
-        LEFT JOIN obraFavorita obf
+        LEFT JOIN obrasFavoritas obf
         ON obf.fkObra = o.id
         GROUP BY o.id, o.titulo
         ORDER BY totalCurtidas DESC;
