@@ -61,11 +61,12 @@ body{
 }
 
 .titulo{
+  margin-top: 20px;
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
     color: #2f1d11;
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-size: 28px;
+    margin-bottom: 30px;
 }
 
 .titulo span{
@@ -76,9 +77,9 @@ body{
 
 .card-cadastro{
 
-  width: 320px;              
+  width: 360px;              
   padding: 30px;            
-  border-radius: 25px;  
+  border-radius: 30px;  
   margin: 140px auto 70px; 
   background: rgba(245, 239, 225, 0.85);
   backdrop-filter: blur(10px);

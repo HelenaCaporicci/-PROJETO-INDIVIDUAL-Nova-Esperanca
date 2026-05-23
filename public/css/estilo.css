@@ -10,6 +10,11 @@ body{
   background-color: #f6efe3;
   overflow-x: hidden;
   padding-top: 100px;
+  background-image:
+linear-gradient(
+rgba(255,255,255,0.02),
+rgba(0,0,0,0.02)
+);
 }
 
 
@@ -62,8 +67,25 @@ body{
 .banner{
     width: 100%;
     height: 350px;
+    position: relative;
+
     overflow: hidden;
     margin-top: -50px;
+}
+
+.banner::after{
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.45)
+  );
 }
 
 .quadro{
@@ -74,12 +96,13 @@ body{
 }
 
 .homes{
+  margin-top: -70px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  gap: 120px;
+  gap: 60px;
 
   padding: 180px 100px 100px;
 }
@@ -98,81 +121,123 @@ body{
 }
 
 .titulo{
-  font-size: 55px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 72px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', serif;
   justify-content: right;
   color: #2f1d11;
   align-items: start;
   justify-content: right;
   text-align: center;
   margin: 2%;
+  
+}
+
+.home03{
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  max-width: 900px;
+  justify-content: center;
+  margin: auto;
+  
+}
+
+.novaEsperanca{
+  font-size: 21px;
+text-align: center;
+  line-height: 2;
+
+  color: #5c4636;
+
+  background-color: rgba(255,255,255,0.6);
+
+  padding: 40px;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+  0px 10px 30px rgba(0,0,0,0.06);
 }
 
 .capa{
   align-items: center;
   justify-content: left;
   padding: 20px;
-  width: 25vw;
+  width: 460px;
   margin: 2%;
 }
 
 .foto_vó{
-  align-items: center;
-  justify-content: left;
-  padding: 20px;
-  width: 25vw;
-  margin: 2%;
-  border-radius: 20px;
-  background-color: #2f1d11;
+  width: 380px;
+
+  border-radius: 30px;
+
+  padding: 8px;
+
+  background:
+  linear-gradient(
+    145deg,
+    #5c3418,
+    #8a5630
+  );
+
+  box-shadow:
+  0 25px 50px rgba(0,0,0,0.18);
+
+  transition: 0.4s ease;
+
+  object-fit: cover;
 }
 
-.sobre_livro{
-  padding: 50px;
-  width: 50vw;
-  margin: 2%;
-    border-radius: 17px;
-    background-color: #7c4e2c;
-    color: #f5efe1;
-    font-size: 15px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    justify-content: right;
+.foto_vó:hover{
+  transform:
+  translateY(-8px)
+  scale(1.02);
+
+  box-shadow:
+  0 35px 60px rgba(0,0,0,0.22);
 }
 
 
 /* IMAGEM */
 
 .capa{
-  width: 380px;
+  width: 460px;
 
-  border-radius: 20px;
+  border-radius: 28px;
+
+  object-fit: cover;
 
   box-shadow:
-  0px 25px 50px rgba(0,0,0,0.15);
+  0 30px 60px rgba(0,0,0,0.22);
 
-  transition: 0.4s;
+  transition:
+  transform 0.5s ease,
+  box-shadow 0.5s ease;
+
+  position: relative;
 }
 
 .capa:hover{
   transform:
-  translateY(-10px)
-  scale(1.02);
-}
-
-.foto_vó{
-  width: 360px;
-
-  border-radius: 24px;
+  translateY(-12px)
+  scale(1.03);
 
   box-shadow:
-  0px 20px 40px rgba(0,0,0,0.12);
+  0 40px 80px rgba(0,0,0,0.28);
 }
 
 
 /* TEXTO */
 
 .sobre_livro{
-  font-size: 18px;
+  font-size: 21px;
 
   line-height: 2;
 
@@ -466,9 +531,13 @@ body{
   background-color: #2f1d11;
 
   color: #f5efe1;
-
+  font-family:Georgia, 'Times New Roman', Times, serif;
   padding: 70px 50px 30px;
+  border-top:
+  1px solid rgba(255,255,255,0.08);
 }
+
+
 
 .rodape-container{
   display: flex;
@@ -497,6 +566,11 @@ body{
   font-size: 18px;
 
   font-weight: 600;
+}
+
+.rodape h4{
+  margin-bottom: 18px;
+  font-size: 20px;
 }
 
 .rodape-coluna h4{

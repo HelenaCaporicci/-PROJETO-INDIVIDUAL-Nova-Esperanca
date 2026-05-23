@@ -2,16 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
-    background: #f5efe6;
-
+    background: linear-gradient(to bottom,#f8f3eb,#efe5d7);
     overflow-x: hidden;
-
     color: #2d1607;
+    font-family: 'Poppins', sans-serif;
 }
 
 .janela{
@@ -161,27 +159,33 @@ body{
 
 .dashboard{
     margin-left: 220px;
-
     width: calc(100% - 220px);
-
     min-height: 100vh;
-
     padding: 40px 50px;
-
     margin-top: -120px;
 }
 
 
 /* TITULO */
 
-.titulo{
-    font-size: 68px;
+.dashboard h1{
+    font-size: 56px;
 
-    text-align: center;
+    text-align: left;
 
-    color: #2d1607;
+    margin-bottom: 10px;
 
-    margin-bottom: 50px;
+    font-family: 'Cormorant Garamond', serif;
+
+    font-weight: 700;
+}
+
+.subtitulo{
+    color: #7b5a45;
+
+    font-size: 20px;
+
+    margin-bottom: 40px;
 }
 
 
@@ -200,11 +204,35 @@ body{
     margin-bottom: 50px;
 }
 
+.icone{
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: #f0dfcc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
 
 /* CARD KPI */
 
 .kpi{
-    background: rgba(255,255,255,0.85);
+    background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.95),
+rgba(245,239,230,0.85)
+);
+
+backdrop-filter: blur(12px);
 
     border-radius: 28px;
 
@@ -229,45 +257,46 @@ body{
 }
 
 
-/* TEXTO KPI */
+/* NUMERO KPI */
 
-.kpi h3{
-    font-size: 20px;
+.kpi h2{
+    font-size: 25px;
 
-    color: #7c6654;
+    color: #47250e;
 
     font-weight: 600;
 
-    line-height: 1.3;
+    line-height: 1.5;
 }
 
-
-/* NUMERO KPI */
-
 .kpi span{
-    font-size: 58px;
+    font-size: 52px;
 
     font-weight: bold;
 
-    color: #2d1607;
+    color: #844d2b;
 
     line-height: 1;
+
+    text-align: center;
+
+    display: flex;
 }
 
 
 /* TEXTO GRANDE */
 
-.textoGrande{
+/*.textoGrande{
     font-size: 34px;
 
     font-weight: bold;
 
-    color: #2d1607;
+    color: #4e260b;
 
     line-height: 1.1;
 
     word-break: break-word;
-}
+}*/
 
 
 /* GRAFICOS */
@@ -286,6 +315,8 @@ body{
 /* CARD GRAFICO */
 
 .card_grafico{
+
+    backdrop-filter: blur(12px);
     background: rgba(255,255,255,0.85);
 
     border-radius: 30px;
@@ -316,6 +347,25 @@ body{
     color: #6d4122;
 
     font-size: 32px;
+
+    font-family:
+    'Cormorant Garamond',
+    serif;
+}
+
+.card_grafico h2::after{
+    content: "";
+
+    width: 80px;
+    height: 2px;
+
+    background: #c9a27d;
+
+    display: block;
+
+    margin: 15px auto 0;
+
+    border-radius: 10px;
 }
 
 .grafico-container{
