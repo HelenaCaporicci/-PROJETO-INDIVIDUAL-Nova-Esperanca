@@ -24,9 +24,7 @@
 
 .hello h3{
     color: #f1d7bc;
-
     font-weight: normal;
-
     margin-bottom: 40px;
 }
 
@@ -36,26 +34,18 @@
 .btn-nav-white,
 .btn-logout{
     width: 85%;
-
     background-color: white;
-
     border-radius: 18px;
-
     padding: 18px;
-
     margin-bottom: 20px;
-
     text-align: center;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
 .btn-nav-white:hover,
 .btn-logout:hover{
     transform: scale(1.05);
-
     background-color: #f5e5d6;
 }
 
@@ -66,17 +56,16 @@
 .btn-nav-white h3,
 .btn-logout h3{
     margin: 0;
-
     color: #6d4122;
 }
 
 
-/* CARROSSEL */
+/* TITULO */
 
 .obra {
   display: flex;
   justify-content: flex-end;
-  padding-right: 150px;
+  padding-right: 360px;
   text-align: center;
   margin-top: 60px;
   font-size: 50px;
@@ -85,28 +74,20 @@
 }
 
 .container-carrossel{
-    margin-left: 270px;
-
+    margin-left: 220px;
     padding-top: 40px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 10px;
 }
 
 .carrossel{
     width: 82%;
-
     display: flex;
-
     gap: 20px;
-
     overflow-x: auto;
-
     scroll-behavior: smooth;
-
     padding: 20px;
 }
 
@@ -115,7 +96,7 @@
 }
 
 
-/* CARDS */
+/* CARDS CARROSSEL */
 
 .card{
     min-width: 240px;
@@ -138,12 +119,11 @@
 
 .card:hover{
     transform: translateY(-8px);
-
     background-color: #fff7ef;
 }
 
 
-/* BOTÕES SETA */
+/* BOTÃO DE SETA */
 
 .btn{
     width: 55px;
@@ -174,7 +154,7 @@
 .texto{
     width: 62%;
     margin:
-    50px auto 60px 380px;
+    50px auto 60px 435px;
     background-color: white;
     padding:
     60px 70px;
@@ -190,9 +170,7 @@
 .texto p::first-letter{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 55px;
-
     font-weight: bold;
-
     color: #8a5630;
 }
 
@@ -201,37 +179,25 @@
 
 .select{
     width: 500px;
-
     margin:
-    80px auto 100px 500px;
-
+    80px auto 100px 700px;
     background-color: white;
-
     padding: 40px;
-
     border-radius: 25px;
-
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-
     text-align: center;
 }
 
 .select h2{
     margin-bottom: 25px;
-
     color: #5c3418;
 }
 
 #select_obra{
     width: 100%;
-
     padding: 15px;
-
     border-radius: 15px;
-
     border: 2px solid #d8c0aa;
-
     font-size: 18px;
-
     outline: none;
 }
