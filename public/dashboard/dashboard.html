@@ -375,15 +375,16 @@ Acompanhe dados, obras e estatísticas do projeto.
 
     function obterDadosGraficoPizza() {
 
-        fetch("/dashboard/conhecimento")
+        fetch("/dashboard/conhecimento",{
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(function (response) {
 
-            .then(function (resposta) {
+                if (response.ok) {
 
-                if (resposta.ok) {
-
-                    resposta.json().then(function (resposta) {
-
-                        console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    response.json().then(function (resposta) {
 
                         plotarGraficoPizza(resposta);
 
@@ -428,7 +429,7 @@ Acompanhe dados, obras e estatísticas do projeto.
 
             labels.push(registro.conhece);
 
-            dados.datasets[0].data.push(registro.total);
+            dados.datasets[0].data.push(registro.percentual);
 
         }
 

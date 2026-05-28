@@ -43,7 +43,8 @@ function buscarConhecimento() {
     var instrucaoSql = `
         SELECT 
         conhece,
-        COUNT(id) AS total
+        COUNT(id) AS total,
+        ROUND((COUNT(id) * 100.0) / (SELECT COUNT(*) FROM usuario), 1) AS percentual
         FROM usuario
         GROUP BY conhece;
     `;

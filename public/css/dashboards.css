@@ -284,30 +284,14 @@ backdrop-filter: blur(12px);
 }
 
 
-/* TEXTO GRANDE */
-
-/*.textoGrande{
-    font-size: 34px;
-
-    font-weight: bold;
-
-    color: #4e260b;
-
-    line-height: 1.1;
-
-    word-break: break-word;
-}*/
 
 
 /* GRAFICOS */
 
 .graficos{
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 30px;
-
     margin-top: 30px;
 }
 

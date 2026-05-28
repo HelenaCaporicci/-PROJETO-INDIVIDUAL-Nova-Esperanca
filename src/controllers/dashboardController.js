@@ -55,6 +55,7 @@ function buscarConhecimento(req, res) {
     dashboardModel.buscarConhecimento()
     .then(function(resultado){
 
+        console.log("Dados recebidos: ", JSON.stringify(resultado));
         res.json(resultado);
 
     }).catch(function(erro){
