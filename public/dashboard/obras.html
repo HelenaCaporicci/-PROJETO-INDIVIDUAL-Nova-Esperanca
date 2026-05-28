@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/obra.css" />
     <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
@@ -539,7 +538,7 @@
 
         <h2>QUAL OBRA VOCÊ GOSTOU MAIS?</h2>
 
-        <select id="select_obra" onchange="salvarObra()">
+        <select id="select_obra">
 
             <option value="selecione">Selecione...</option>
             <option value="1">Meu último carnaval</option>
@@ -554,6 +553,9 @@
         </select>
 
     </div>
+
+    <button class="botao" onclick="salvarObra()">Selecionar</button>
+    <div class="div" id="div_selecao"></div>
 
 </body>
 
@@ -601,6 +603,7 @@
     .then(function(resposta){
 
         console.log("Favoritado com sucesso");
+        div_selecao.innerHTML = "Favoritado com sucesso!"
 
     })
 

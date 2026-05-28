@@ -201,3 +201,22 @@
     font-size: 18px;
     outline: none;
 }
+.botao{
+    display: flex; 
+    background-color: #2f1d11;
+    color: #f5efe1;
+    padding: 10px;
+    border-radius: 13px;
+    font-size: 13px;
+    margin: auto;
+    margin-top: -80px;
+    margin-right: 700px;
+}
+.div{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #2f1d11;
+    padding-right: 100px;
+    margin-block-end: 50px;
+}

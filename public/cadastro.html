@@ -100,7 +100,6 @@
       let caracter = ["!", "@", "#", "$", "%", "^", "&", "*"];
       let temCaracter = false;
 
-      // LIMPAR ERROS
 
       erro_nome.innerHTML = "";
       erro_email.innerHTML = "";
@@ -109,15 +108,12 @@
       erro_select.innerHTML = "";
       mensagem_sucesso.innerHTML = "";
 
-      // NOME
 
       if (nomeVar == "") {
 
         erro_nome.innerHTML = "Preencha o nome";
         return false;
       }
-
-      // EMAIL
 
       if (emailVar == "") {
 
@@ -131,7 +127,6 @@
         return false;
       }
 
-      // SENHA
 
       if (senhaVar == "") {
 
@@ -145,7 +140,6 @@
         return false;
       }
 
-      // CARACTERE ESPECIAL
 
       for (let i = 0; i < senhaVar.length; i++) {
 
@@ -162,7 +156,6 @@
         return false;
       }
 
-      // CONFIRMAÇÃO
 
       if (confirmacaoSenhaVar == "") {
 
@@ -176,7 +169,6 @@
         return false;
       }
 
-      // SELECT
 
       if (conheceVar == "Selecione") {
 
@@ -184,7 +176,6 @@
         return false;
       }
 
-      // FETCH
 
       fetch("/usuarios/cadastrar", {
 
